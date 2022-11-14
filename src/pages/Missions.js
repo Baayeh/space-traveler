@@ -1,36 +1,71 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { DataTable } from 'primereact/datatable';
-// import { Column } from 'primereact/column';
 import { fetchMission } from '../redux/missions/missionSlice';
 
 const Missons = () => {
-  const mission = useSelector((state) => state.mission.missions);
-  const [missions, setMissions] = useState(null);
-
-  const handleMissions = () => {
-    if (mission.length) {
-      setMissions(mission);
-    }
-  };
-  console.log(mission);
+  const missionData = useSelector((state) => state.mission.missions);
   const dispatch = useDispatch();
+  const [active, setActive] = useState(false);
+
+  const joinMission = (id) => {
+    missionData?.forEach((mission) => {
+      if (mission.mission_id === id) {
+        setActive(true);
+      }
+    });
+  };
+
+  const leaveMission = () => {
+    setActive(false);
+  };
 
   useEffect(() => {
     dispatch(fetchMission());
-    handleMissions();
   }, []);
 
-  console.log(missions);
-
   return (
-    // <DataTable value={missions}>
-    //   <Column field="code" header="Code" />
-    //   <Column field="name" header="Name" />
-    //   <Column field="category" header="Category" />
-    //   <Column field="quantity" header="Quantity" />
-    // </DataTable>
-    <div>Mission</div>
+    <div className="mission-wrapper">
+      <table className="mission-table">
+        <thead className="thead-row">
+          <tr>
+            <th className="t-head">Mission</th>
+            <th className="t-head">Description</th>
+            <th className="t-head">State</th>
+            <th className="t-head"> </th>
+          </tr>
+        </thead>
+        <tbody>
+          {missionData?.map((mission) => (
+            <tr key={mission.mission_id}>
+              <td>{mission.mission_name}</td>
+              <td className="td-desc">{mission.description}</td>
+              <td className="td-state">
+                <span className="member-badge">Not A Member</span>
+              </td>
+              <td>
+                {!active ? (
+                  <button
+                    type="button"
+                    className="join-btn"
+                    onClick={() => joinMission(mission.mission_id)}
+                  >
+                    Join Mission
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className="leave-btn"
+                    onClick={leaveMission}
+                  >
+                    Leave Mission
+                  </button>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
