@@ -51,6 +51,13 @@ div.mission-wrapper {
   padding: 0 40px;
 }
 
+div.loading-msg {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
 table.mission-table {
   width: 100%;
   margin: 3rem 0;
@@ -68,6 +75,10 @@ tbody tr td {
   padding: 1rem;
 }
 
+td.mission-name {
+  font-weight: bold;
+}
+
 td.td-desc {
   width: 45rem;
 }
@@ -76,12 +87,27 @@ tbody tr:nth-child(odd) {
   background-color: #f3f3f3;
 }
 
-td.td-state span.member-badge {
+td.td-state {
+  width: 199px;
+  padding: 0;
+}
+
+td.td-state span.inactive-badge {
   background-color: rgb(127, 135, 144);
   padding: 0.2rem 0.5rem;
   color: #fff;
   border-radius: 12px;
   font-size: small;
+  transition: 0.5s ease-out;
+}
+
+td.td-state span.active-badge {
+  background-color: rgb(95, 206, 253);
+  padding: 0.2rem 0.5rem;
+  color: #000;
+  border-radius: 12px;
+  font-size: small;
+  transition: 0.5s ease-out;
 }
 
 td.td-state,

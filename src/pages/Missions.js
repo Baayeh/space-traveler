@@ -1,70 +1,77 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMission } from '../redux/missions/missionSlice';
+import {
+  fetchMission,
+  leaveMission,
+  reserveMission,
+} from '../redux/missions/missionSlice';
 
 const Missons = () => {
-  const missionData = useSelector((state) => state.mission.missions);
+  const { loading, missions, error } = useSelector((state) => state.mission);
   const dispatch = useDispatch();
-  const [active, setActive] = useState(false);
 
   const joinMission = (id) => {
-    missionData?.forEach((mission) => {
-      if (mission.mission_id === id) {
-        setActive(true);
-      }
-    });
+    dispatch(reserveMission(id));
   };
 
-  const leaveMission = () => {
-    setActive(false);
+  const exitMission = (id) => {
+    dispatch(leaveMission(id));
   };
 
   useEffect(() => {
     dispatch(fetchMission());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="mission-wrapper">
-      <table className="mission-table">
-        <thead className="thead-row">
-          <tr>
-            <th className="t-head">Mission</th>
-            <th className="t-head">Description</th>
-            <th className="t-head">State</th>
-            <th className="t-head"> </th>
-          </tr>
-        </thead>
-        <tbody>
-          {missionData?.map((mission) => (
-            <tr key={mission.mission_id}>
-              <td>{mission.mission_name}</td>
-              <td className="td-desc">{mission.description}</td>
-              <td className="td-state">
-                <span className="member-badge">Not A Member</span>
-              </td>
-              <td>
-                {!active ? (
-                  <button
-                    type="button"
-                    className="join-btn"
-                    onClick={() => joinMission(mission.mission_id)}
-                  >
-                    Join Mission
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    className="leave-btn"
-                    onClick={leaveMission}
-                  >
-                    Leave Mission
-                  </button>
-                )}
-              </td>
+      {loading && <div className="loading-msg">Loading...</div>}
+      {!loading && error && <div>{error}</div>}
+      {!loading && (
+        <table className="mission-table">
+          <thead className="thead-row">
+            <tr>
+              <th className="t-head">Mission</th>
+              <th className="t-head">Description</th>
+              <th className="t-head">State</th>
+              <th className="t-head"> </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {missions?.map((mission) => (
+              <tr key={mission.mission_id}>
+                <td className="mission-name">{mission.mission_name}</td>
+                <td className="td-desc">{mission.description}</td>
+                <td className="td-state">
+                  {!mission.reserved ? (
+                    <span className="inactive-badge">Not A Member</span>
+                  ) : (
+                    <span className="active-badge">Active Member</span>
+                  )}
+                </td>
+                <td className="td-state">
+                  {!mission.reserved ? (
+                    <button
+                      type="button"
+                      className="join-btn"
+                      onClick={() => joinMission(mission.mission_id)}
+                    >
+                      Join Mission
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      className="leave-btn"
+                      onClick={() => exitMission(mission.mission_id)}
+                    >
+                      Leave Mission
+                    </button>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 };
