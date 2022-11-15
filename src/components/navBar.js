@@ -27,10 +27,10 @@ function NavBar() {
           </li>
           <li>
             <NavLink
-              to="profile"
+              to="/profile"
               className={`nav_link ${(isActive) => (isActive ? 'active' : '')}`}
             >
-              Profile
+              My profile
             </NavLink>
           </li>
         </ul>
