@@ -15,7 +15,6 @@ const Rocket = () => {
   return (
     <div>
       <h1>All Rockets</h1>
-      <h1>All Rockets</h1>
     </div>
   );
 };
