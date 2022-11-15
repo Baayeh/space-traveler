@@ -1,13 +1,14 @@
 import { Routes, Route } from 'react-router-dom';
-import './App.css';
 import NavBar from './components/navBar';
+import Rocket from './pages/Rocket';
 
 function App() {
   return (
     <>
       <NavBar />
       <Routes className="App">
-        <Route className="App" />
+        <Route />
+        <Route path="rockets" element={<Rocket />} />
       </Routes>
     </>
   );
