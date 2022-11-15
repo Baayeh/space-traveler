@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+* {
+  font-family: 'Nunito', sans-serif;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -5,21 +11,16 @@ body {
 
 .nav_header_container {
   display: flex;
-  flex-direction: row;
-  width: 100vw;
   height: 80px;
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid rgb(173, 173, 173);
+  padding: 0 40px;
 }
 
 .nav_items {
   display: flex;
   flex-direction: row;
-}
-
-.logo {
-  padding-left: 40px;
 }
 
 .nav-links {
@@ -28,14 +29,88 @@ body {
   text-decoration: none;
   list-style: none;
   gap: 20px;
-  padding-right: 40px;
 }
 
-.nav_link {
+a.nav_link {
   text-decoration: none;
   color: rgb(19, 19, 231);
 }
 
 .nav_link:hover {
   text-decoration: underline;
+}
+
+a.active {
+  text-decoration: underline;
+}
+
+/*
+ Missions Component
+*/
+div.mission-wrapper {
+  padding: 0 40px;
+}
+
+table.mission-table {
+  width: 100%;
+  margin: 3rem 0;
+  border-collapse: collapse;
+}
+
+td,
+th.t-head {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tbody tr td {
+  padding: 1rem;
+}
+
+td.td-desc {
+  width: 45rem;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f3f3f3;
+}
+
+td.td-state span.member-badge {
+  background-color: rgb(127, 135, 144);
+  padding: 0.2rem 0.5rem;
+  color: #fff;
+  border-radius: 12px;
+  font-size: small;
+}
+
+td.td-state,
+tbody tr td:nth-child(4) {
+  text-align: center;
+}
+
+tbody tr button.join-btn,
+tbody tr button.leave-btn {
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  transition: 0.5s ease-out;
+}
+
+tbody tr button.join-btn {
+  background-color: aquamarine;
+}
+
+tbody tr button.join-btn:hover {
+  background-color: rgb(114, 226, 189);
+}
+
+tbody tr button.leave-btn {
+  background-color: rgb(255, 0, 0);
+  color: #fff;
+}
+
+tbody tr button.leave-btn:hover {
+  background-color: rgb(213, 4, 4);
 }
