@@ -3,26 +3,36 @@ import { NavLink } from 'react-router-dom';
 
 function NavBar() {
   return (
-
     <div className="nav_header_container">
       <h2 className="logo">Space Travelers Hub</h2>
 
       <nav className="nav_items">
         <ul className="nav-links">
           <li>
-            <NavLink to="/">Rockets</NavLink>
+            <NavLink
+              to="/"
+              className={`nav_link ${(isActive) => (isActive ? 'active' : '')}`}
+              end
+            >
+              Rockets
+            </NavLink>
           </li>
-          {/* <li>
-            <NavLink to="rockets" className="nav_link">Rockets</NavLink>
-          </li>
-          <li>|</li>
           <li>
-            <NavLink to="/calculator" className="nav_link">Missions</NavLink>
+            <NavLink
+              to="missions"
+              className={`nav_link ${(isActive) => (isActive ? 'active' : '')}`}
+            >
+              Missions
+            </NavLink>
           </li>
-          <li>|</li>
           <li>
-            <NavLink to="/quote" className="nav_link">My profile</NavLink>
-          </li> */}
+            <NavLink
+              to="profile"
+              className={`nav_link ${(isActive) => (isActive ? 'active' : '')}`}
+            >
+              Profile
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </div>
