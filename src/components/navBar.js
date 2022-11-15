@@ -10,7 +10,10 @@ function NavBar() {
       <nav className="nav_items">
         <ul className="nav-links">
           <li>
-            <NavLink to="/" className="nav_link">Rockets</NavLink>
+            <NavLink to="/">Rockets</NavLink>
+          </li>
+          {/* <li>
+            <NavLink to="rockets" className="nav_link">Rockets</NavLink>
           </li>
           <li>|</li>
           <li>
@@ -19,7 +22,7 @@ function NavBar() {
           <li>|</li>
           <li>
             <NavLink to="/quote" className="nav_link">My profile</NavLink>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </div>
