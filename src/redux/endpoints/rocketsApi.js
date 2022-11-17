@@ -9,6 +9,7 @@ const rocketFetch = async () => {
     rockets_name: item.rocket_name,
     description: item.description,
     flickr_images: item.flickr_images[0],
+    reserved: false,
   }));
 };
 
