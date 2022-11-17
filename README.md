@@ -1,14 +1,13 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Space Traveler
 
-> Description the project.
+> A web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- React
+- Redux
 
 ## Live Demo (if available)
 
@@ -16,36 +15,27 @@
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
+- Clone the repo to your local environment
+- Run `npm install` to install all dependencies
+- Run `npm run start` to open it in your browser.
+- Modify to your taste with your preferred text editor
+- Enjoy 😊
 
 ## Authors
 
-👤 **Author1**
+👤 **Kwasi Antwi Baayeh**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/Baayeh)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/kabaayeh)
+- Twiiter: [Twitter](https://twitter.com/Cest_Baayeh)
 
-👤 **Author2**
+👤 **Samuel Moiwa**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/samuelmoiwa)
+- Twitter: [@twitterhandle](https://twitter.com/samuelmoiwa)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ing-abdulai-samuel-moiwa-726340142/)
 
 ## 🤝 Contributing
 
@@ -59,12 +49,10 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse
+- SpaceX API
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT license](https://choosealicense.com/licenses/mit/) licensed.
 
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
