@@ -1,13 +1,23 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllRockets } from '../redux/rocket/rockets';
+import { cancelRocket, fetchAllRockets, reserveRocket } from '../redux/rocket/rockets';
 
 const Rocket = () => {
   const rockets = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
 
+  const bookRocket = (id) => {
+    dispatch(reserveRocket(id));
+  };
+
+  const cancelReservation = (id) => {
+    dispatch(cancelRocket(id));
+  };
+
   useEffect(() => {
-    dispatch(fetchAllRockets());
+    if (rockets.length === 0) {
+      dispatch(fetchAllRockets());
+    }
   }, []);
 
   return (
@@ -23,11 +33,30 @@ const Rocket = () => {
                 }}
               />
               <div className="card-body md:w-[70%]">
-                <h3 className="card-title">{rocket.rockets_name}</h3>
+                <h3 className="card-title">
+                  <span>{rocket.rockets_name}</span>
+                  {rocket && rocket.reserved === true && (
+                    <small>Reserved</small>
+                  )}
+                </h3>
                 <p className="card-desc">{rocket.description}</p>
-                <button type="button" className="reserve-btn">
-                  Reserve Ticket
-                </button>
+                {!rocket.reserved ? (
+                  <button
+                    type="button"
+                    className="reserve-btn"
+                    onClick={() => bookRocket(rocket.id)}
+                  >
+                    Join Mission
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className="leave-btn"
+                    onClick={() => cancelReservation(rocket.id)}
+                  >
+                    Leave Mission
+                  </button>
+                )}
               </div>
             </div>
           </li>
