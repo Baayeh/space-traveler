@@ -19,8 +19,10 @@ const Missons = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchMission());
-  }, [dispatch]);
+    if (missions.length === 0) {
+      dispatch(fetchMission());
+    }
+  }, []);
 
   return (
     <div className="mission-wrapper">
