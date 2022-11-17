@@ -51,7 +51,7 @@ const Profile = () => {
                 <span>{rocket.rockets_name}</span>
                 <div className="actions">
                   <button type="button" className="leave-btn" onClick={() => cancelReservation(rocket.id)}>
-                    Leave Mission
+                    Cancel Reservation
                   </button>
                 </div>
               </li>

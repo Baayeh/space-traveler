@@ -46,7 +46,7 @@ const Rocket = () => {
                     className="reserve-btn"
                     onClick={() => bookRocket(rocket.id)}
                   >
-                    Join Mission
+                    Reserve Rocket
                   </button>
                 ) : (
                   <button
@@ -54,7 +54,7 @@ const Rocket = () => {
                     className="leave-btn"
                     onClick={() => cancelReservation(rocket.id)}
                   >
-                    Leave Mission
+                    Cancel Reservation
                   </button>
                 )}
               </div>
