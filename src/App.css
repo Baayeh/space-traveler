@@ -140,3 +140,52 @@ tbody tr button.leave-btn {
 tbody tr button.leave-btn:hover {
   background-color: rgb(213, 4, 4);
 }
+
+/*
+Rocket Component
+*/
+ul.rocket-list {
+  list-style: none;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+div.card {
+  display: flex;
+  gap: 1.25rem;
+}
+
+div.card-img {
+  width: 30%;
+  height: 16rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+div.card-body {
+  width: 70%;
+}
+
+h3.card-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+p.card-desc {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+button.reserve-btn {
+  background-color: rgb(0, 115, 255);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+}

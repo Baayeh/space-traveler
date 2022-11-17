@@ -17,7 +17,6 @@ function NavBar() {
               Rockets
             </NavLink>
           </li>
-          <li>|</li>
           <li>
             <NavLink
               to="missions"
@@ -26,7 +25,6 @@ function NavBar() {
               Missions
             </NavLink>
           </li>
-          <li>|</li>
           <li>
             <NavLink
               to="/profile"

@@ -1,18 +1,13 @@
-import { Routes, Route } from 'react-router-dom';
-import './App.css';
+import { Outlet } from 'react-router-dom';
 import NavBar from './components/navBar';
-import Missons from './pages/Missions';
-import Profile from './pages/Profile';
 
 function App() {
   return (
     <>
       <NavBar />
-      <Routes className="App">
-        <Route className="App" />
-        <Route path="missions" element={<Missons />} />
-        <Route path="profile" element={<Profile />} />
-      </Routes>
+      <main>
+        <Outlet />
+      </main>
     </>
   );
 }
