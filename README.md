@@ -34,6 +34,8 @@ To get a local copy up and running follow these simple example steps.
 👤 **Samuel Moiwa**
 
 - GitHub: [@githubhandle](https://github.com/samuelmoiwa)
+- Twitter: [@twitterhandle](https://twitter.com/samuelmoiwa)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ing-abdulai-samuel-moiwa-726340142/)
 
 ## 🤝 Contributing
 
