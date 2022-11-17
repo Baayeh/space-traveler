@@ -10,12 +10,29 @@ const Rocket = () => {
     dispatch(fetchAllRockets());
   }, []);
 
-  console.log(rockets);
-
   return (
-    <div>
-      <h1>All Rockets</h1>
-    </div>
+    <ul className="rocket-list">
+      {rockets
+        && rockets?.map((rocket) => (
+          <li className="list-item" key={rocket.id}>
+            <div className="card">
+              <div
+                className="card-img"
+                style={{
+                  backgroundImage: `url(${rocket.flickr_images})`,
+                }}
+              />
+              <div className="card-body md:w-[70%]">
+                <h3 className="card-title">{rocket.rockets_name}</h3>
+                <p className="card-desc">{rocket.description}</p>
+                <button type="button" className="reserve-btn">
+                  Reserve Ticket
+                </button>
+              </div>
+            </div>
+          </li>
+        ))}
+    </ul>
   );
 };
 
