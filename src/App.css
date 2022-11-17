@@ -9,18 +9,37 @@ body {
   margin: 0;
 }
 
+main {
+  margin-top: 7rem;
+}
+
 .nav_header_container {
   display: flex;
   height: 80px;
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid rgb(173, 173, 173);
-  padding: 0 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+div.logo-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 40px;
+}
+
+img.logo {
+  width: 4rem;
 }
 
 .nav_items {
   display: flex;
   flex-direction: row;
+  margin-right: 40px;
 }
 
 .nav-links {
