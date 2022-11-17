@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { leaveMission } from '../redux/missions/missionSlice';
+import { cancelRocket } from '../redux/rocket/rockets';
 
 const Profile = () => {
   const { missions } = useSelector((state) => state.mission);
@@ -9,6 +10,10 @@ const Profile = () => {
 
   const exitMission = (id) => {
     dispatch(leaveMission(id));
+  };
+
+  const cancelReservation = (id) => {
+    dispatch(cancelRocket(id));
   };
 
   const reservedMissions = missions.filter(
@@ -43,9 +48,9 @@ const Profile = () => {
           {reservedRockets
             && reservedRockets.map((rocket) => (
               <li key={rocket.id}>
-                <span>{rocket.rocket_name}</span>
+                <span>{rocket.rockets_name}</span>
                 <div className="actions">
-                  <button type="button" className="leave-btn">
+                  <button type="button" className="leave-btn" onClick={() => cancelReservation(rocket.id)}>
                     Leave Mission
                   </button>
                 </div>
