@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
-import Rocket from './pages/Rocket';
 import './App.css';
-import Missons from './pages/Missions';
+import Homepage from './pages/Homepage';
+import Missions from './pages/Missions';
 import Profile from './pages/Profile';
+import Rocket from './pages/Rocket';
+import store from './redux/store';
 
 const router = createBrowserRouter([
   {
@@ -16,11 +17,15 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        element: <Homepage />,
+      },
+      {
+        path: 'rockets',
         element: <Rocket />,
       },
       {
         path: 'missions',
-        element: <Missons />,
+        element: <Missions />,
       },
       {
         path: 'profile',
