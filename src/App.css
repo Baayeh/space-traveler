@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* theme */
+@import 'primereact/resources/themes/lara-light-indigo/theme.css';
+
+/* core */
+@import 'primereact/resources/primereact.min.css';
+
+/* icons */
+@import 'primeicons/primeicons.css';
+
 * {
   font-family: 'Nunito', sans-serif;
 }
@@ -9,160 +22,61 @@ body {
   margin: 0;
 }
 
-main {
-  margin-top: 7rem;
+div.img-bg {
+  background-image: url('https://res.cloudinary.com/dskl0qde4/image/upload/v1678474160/space_s8mxgr.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.nav_header_container {
-  display: flex;
-  height: 80px;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid rgb(173, 173, 173);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #fff;
+div.img-text {
+  width: 40%;
+  position: absolute;
+  top: 15rem;
+  left: 11rem;
 }
 
-div.logo-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-left: 40px;
+.active {
+  @apply text-orange-500;
 }
 
-img.logo {
-  width: 4rem;
+section#rockets,
+section#missions {
+  height: 100%;
+  background-image: url('https://res.cloudinary.com/dskl0qde4/image/upload/v1678482474/philip-myrtorp-HPNLQH3UNSM-unsplash_tp61kn.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.nav_items {
-  display: flex;
-  flex-direction: row;
-  margin-right: 40px;
+section#profile {
+  height: 100vh;
+  background-image: url('https://res.cloudinary.com/dskl0qde4/image/upload/v1678482474/philip-myrtorp-HPNLQH3UNSM-unsplash_tp61kn.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.nav-links {
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
-  list-style: none;
-  gap: 20px;
-}
-
-a.nav_link {
-  text-decoration: none;
-  color: rgb(19, 19, 231);
-}
-
-.nav_link:hover {
-  text-decoration: underline;
-}
-
-a.active {
-  text-decoration: underline;
-}
-
-/*
- Missions Component
-*/
-div.mission-wrapper {
-  padding: 0 40px;
-}
-
-div.loading-msg {
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 2rem;
-  font-weight: bold;
-}
-
-table.mission-table {
-  width: 100%;
-  margin: 3rem 0;
-  border-collapse: collapse;
-}
-
-td,
-th.t-head {
-  border: 1px solid #ddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tbody tr td {
-  padding: 1rem;
-}
-
-td.mission-name {
-  font-weight: bold;
-}
-
-td.td-desc {
-  width: 45rem;
-}
-
-tbody tr:nth-child(odd) {
-  background-color: #f3f3f3;
-}
-
-td.td-state {
-  width: 199px;
-  padding: 0;
-}
-
-td.td-state span.inactive-badge {
-  background-color: rgb(127, 135, 144);
-  padding: 0.2rem 0.5rem;
-  color: #fff;
-  border-radius: 12px;
-  font-size: small;
-  transition: 0.5s ease-out;
-}
-
-td.td-state span.active-badge {
-  background-color: rgb(95, 206, 253);
-  padding: 0.2rem 0.5rem;
-  color: #000;
-  border-radius: 12px;
-  font-size: small;
-  transition: 0.5s ease-out;
-}
-
-td.td-state,
-tbody tr td:nth-child(4) {
-  text-align: center;
-}
-
-button.join-btn,
-button.leave-btn {
+div.rocket-card {
   cursor: pointer;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 3px;
-  transition: 0.5s ease-out;
 }
 
-tbody tr button.join-btn {
-  background-color: aquamarine;
+div.rocket-overlay {
+  /* display: none; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.6s ease-in-out;
 }
 
-tbody tr button.join-btn:hover {
-  background-color: rgb(114, 226, 189);
-}
-
-button.leave-btn {
-  background-color: rgb(255, 0, 0);
-  color: #fff;
-}
-
-button.leave-btn:hover {
-  background-color: rgb(213, 4, 4);
+div.rocket-card:hover div.rocket-overlay {
+  height: 100%;
 }
 
 /*
 Profile Component
 */
+
 div.profile-wrapper {
   display: flex;
   padding: 0 40px;
@@ -190,64 +104,4 @@ ul.reserved-mission-list li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-/*
-Rocket Component
-*/
-ul.rocket-list {
-  list-style: none;
-  padding: 0 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
-}
-
-div.card {
-  display: flex;
-  gap: 1.25rem;
-}
-
-div.card-img {
-  width: 30%;
-  height: 16rem;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-div.card-body {
-  width: 70%;
-}
-
-h3.card-title {
-  font-weight: bold;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  display: flex;
-  align-items: center;
-}
-
-h3.card-title small {
-  font-size: 1rem;
-  margin-left: 0.5rem;
-  background-color: rgb(91, 247, 91);
-  padding: 0 1rem;
-  border-radius: 20px;
-}
-
-p.card-desc {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  margin-bottom: 0.75rem;
-}
-
-button.reserve-btn {
-  cursor: pointer;
-  background-color: rgb(0, 115, 255);
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  border: none;
 }
