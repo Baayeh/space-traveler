@@ -4,6 +4,8 @@
 
 > A web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
+<img src="https://res.cloudinary.com/dskl0qde4/image/upload/v1678547386/Screenshot_2023-03-11_at_15-08-32_Space_Traveler_krpvzb.png" />
+
 ## Built With
 
 - React
