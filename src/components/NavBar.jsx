@@ -35,14 +35,6 @@ function NavBar() {
         </li>
         <li>
           <NavLink
-            to="dragons"
-            className={`nav_link text-white text-2xl ${(isActive) => (isActive ? 'active' : '')}`}
-          >
-            Dragons
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
             to="profile"
             className={`nav_link text-white text-2xl ${(isActive) => (isActive ? 'active' : '')}`}
           >
