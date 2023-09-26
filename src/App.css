@@ -17,26 +17,24 @@
   font-family: 'Nunito', sans-serif;
 }
 
+html,
 body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #030711;
+  min-height: 100vh;
+  color: #fff;
+  scroll-behavior: smooth;
+  scroll-padding-top: 74px;
   padding: 0;
   margin: 0;
 }
 
-div.img-bg {
-  background-image: url('https://res.cloudinary.com/dskl0qde4/image/upload/v1678474160/space_s8mxgr.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-div.img-text {
-  width: 40%;
-  position: absolute;
-  top: 15rem;
-  left: 11rem;
-}
-
 .active {
-  @apply text-orange-500;
+  @apply text-orange-500 border-orange-500;
+}
+
+.scrolled {
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 section#rockets,
@@ -45,6 +43,7 @@ section#missions {
   background-image: url('https://res.cloudinary.com/dskl0qde4/image/upload/v1678482474/philip-myrtorp-HPNLQH3UNSM-unsplash_tp61kn.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 section#profile {
@@ -52,6 +51,7 @@ section#profile {
   background-image: url('https://res.cloudinary.com/dskl0qde4/image/upload/v1678482474/philip-myrtorp-HPNLQH3UNSM-unsplash_tp61kn.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 div.rocket-card {
@@ -104,4 +104,55 @@ ul.reserved-mission-list li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* MultiSelect Component */
+.p-multiselect-panel {
+  @apply bg-gray-700 text-white;
+}
+
+.p-multiselect-item {
+  @apply text-gray-300;
+  color: #fff !important;
+}
+
+.p-multiselect-item:hover {
+  @apply text-gray-700;
+}
+
+div.mask {
+  --bg-opacity: 1;
+  --glass-bg: rgba(3, 7, 17, 0.7);
+  --text-primary: #e1e7ef;
+
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  color: var(--text-primary);
+}
+
+div#dialog {
+  @apply w-[100%] sm:w-[65dvw] lg:w-[40dvw];
+}
+
+div.p-dialog-header,
+div.p-dialog-content {
+  --text-primary: #e1e7ef;
+  --secondary-bg: rgb(7, 25, 43);
+
+  background: var(--secondary-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/* tr:nth-of-type(2n) {
+  @apply bg-slate-50 text-black;
+} */
+
+th,
+td {
+  padding: 0.8rem;
 }
