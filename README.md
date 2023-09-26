@@ -29,7 +29,6 @@ a<!-- TABLE OF CONTENTS -->
   <summary>Frontend</summary>
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
-    <li><a href="https://www.typescriptlang.org/">TypeScript</a></li>
     <li><a href="https://redux-toolkit.js.org/">Redux Toolkit</a></li>
     <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
   </ul>
