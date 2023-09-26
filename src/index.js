@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import './App.css';
+import Capsules from './pages/Capsules';
 import Homepage from './pages/Homepage';
 import Missions from './pages/Missions';
 import Profile from './pages/Profile';
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Homepage />,
+      },
+      {
+        path: 'capsules',
+        element: <Capsules />,
       },
       {
         path: 'rockets',
