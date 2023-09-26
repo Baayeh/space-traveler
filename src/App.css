@@ -113,6 +113,7 @@ ul.reserved-mission-list li {
 
 .p-multiselect-item {
   @apply text-gray-300;
+
   color: #fff !important;
 }
 
@@ -147,10 +148,6 @@ div.p-dialog-content {
 table {
   border-collapse: collapse;
 }
-
-/* tr:nth-of-type(2n) {
-  @apply bg-slate-50 text-black;
-} */
 
 th,
 td {
